@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+
+<style type="text/css">
+	.body-font {
+	font-size: 14px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+	.header-font {font-size: 12px;font-family: Arial, Helvetica, sans-serif;font-weight:bold;color: #2D4268}
+	.footer-font {font-size: 9px;font-family: Arial, Helvetica, sans-serif;color: #666;}
+.style1 {
+	font-style: italic;
+	font-weight: bold;
+}
+.style2 {
+	font-size: 18px;
+	font-weight: bold;
+	color: #003399;
+}
+</style>
+
+</head>
+
+<body>
+<table width="47%" border="0">
+  <tr>
+    <td class="header-font"><img src="${cdnUrl}/final_email_top.png" width="754" height="71" /></td>
+  </tr>
+  <tr>
+    <td class="header-font"><p>Hi ${username}</p>
+      <p>Welcome to inCyyte</p></td>
+  </tr>
+  <tr>
+    <td class="body-font"><p>Now you can be a part of a global collective, where your questions and opinions are answered and heard. InCyyte lets<br />
+      you:</p>
+      <p>&nbsp;</p>
+      <p class="style1">Ask the whole world, your community or your friends a question..</p>
+      <p><em><strong>List your answers to that question as options they can choose from..</strong></em></p>
+      <p><em><strong>       Within seconds receive a statistical breakdown 
+      of their responses..</strong></em></p>
+      <p>&nbsp;</p>
+      <p> Watch as individuals throughout the globe participate in your personal poll. You can also send anonymous inCyytes to <br /> smaller groups 
+        like classmates, work colleagues or even your community broken down into specific postcode areas. <br />
+        </p>
+      <p>Our new and unique method of social-polling puts the power back into the hands of <strong>YOU! - THE PEOPLE!!</strong>, because<br /> together we are one voice and all our opinions count. <br />
+      </p>
+      <p>To activate your account, enter the following activation code to access your account: <a href="${activationCode}"><span class="style2">${activationCode}</span></a></p>
+      <p>InCyyte is free to use and will always uphold you anonymity as a member. We hope you enjoy the full range of features<br /> within 
+        our website in your quest to gain ‘inCyyte’ (insight) into the opinions of millions.<br />
+    </p></td>
+  </tr>
+  <tr>
+    <td><img src="${cdnUrl}/final_email_bottom.png" width="752" height="76" /></td>
+  </tr>
+  <tr>
+    <td class="footer-font">
+              This message was sent by an inCyyte user who entered your email address.   If you'd prefer not to receive emails when other people invite you to cast your   vote on<BR/>
+              inCyyte click here: <a href="http://www.incyyte.com/new_user_invitations.?php.com" target="_blank">http://www.incyyte.com/new_user_invitations.?php.com</a>  Please   do not reply to this message as it was sent from an unmonitored email   address.<BR/>
+              This message is a service email related to your use of inCyyte. For   general inquiries or to request support with your inCyyte account, please visit us at <a href="http://www.incyyte.com/helpandsupport" target="_blank">inCyyte   Help</a><BR/>
+</td>
+  </tr>
+</table>
+</body>
+</html>

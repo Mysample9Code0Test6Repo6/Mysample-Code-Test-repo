@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+
+<style type="text/css">
+	.body-font {
+	font-size: 14px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+	.header-font {font-size: 12px;font-family: Arial, Helvetica, sans-serif;font-weight:bold;color: #2D4268}
+	.footer-font {font-size: 9px;font-family: Arial, Helvetica, sans-serif;color: #666;}
+.style1 {
+	font-style: italic;
+	font-weight: bold;
+}
+.style2 {
+	font-size: 18px;
+	font-weight: bold;
+	color: #003399;
+}
+</style>
+
+</head>
+
+<body>
+<table width="47%" border="0">
+  <tr>
+    <td class="header-font"><img src="${cdnUrl}/final_email_top.png" width="754" height="71" /></td>
+  </tr>
+  <tr>
+    <td class="header-font"><p>Hi ${username}</p>
+      <p>Post script url</p></td>
+  </tr>
+  <tr>
+    <td class="body-font">
+    	<p>${postUrl}</p>
+    </td>
+  </tr>
+  <tr>
+    <td><img src="${cdnUrl}/final_email_bottom.png" width="752" height="76" /></td>
+  </tr>
+  <tr>
+    <td class="footer-font">
+              This message was sent by an inCyyte user who entered your email address.   If you'd prefer not to receive emails when other people invite you to cast your   vote on<BR/>
+              inCyyte click here: <a href="http://www.incyyte.com/new_user_invitations.?php.com" target="_blank">http://www.incyyte.com/new_user_invitations.?php.com</a>  Please   do not reply to this message as it was sent from an unmonitored email   address.<BR/>
+              This message is a service email related to your use of inCyyte. For   general inquiries or to request support with your inCyyte account, please visit us at <a href="http://www.incyyte.com/helpandsupport" target="_blank">inCyyte   Help</a><BR/>
+</td>
+  </tr>
+</table>
+</body>
+</html>
