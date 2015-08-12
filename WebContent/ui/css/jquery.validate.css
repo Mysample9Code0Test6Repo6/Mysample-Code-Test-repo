@@ -1,0 +1,27 @@
+
+.InputGroup {
+    display: block;
+    padding: 3px 4px;
+    border: 1px solid #FFF;
+    border-radius: 7px;
+    -moz-border-radius: 7px;
+}
+
+.ErrorField {
+   /* border-color: #C2002D;*/
+    color: #1b303f;
+    /*background: #FFFFFE;*/
+}
+
+span.ValidationErrors {
+    /*display: block;*/
+    font:14px/20px 'bariol_regularregular', 'ie8_bariol_regular';
+    color: #C2002D;
+/*    padding-bottom: 10px;*/
+    font-style: normal;
+	display:block;
+transition: width 2s, height 2s, transform 2s;
+-moz-transition: width 2s, height 2s, -moz-transform 2s;
+-webkit-transition: width 2s, height 2s, -webkit-transform 2s;
+-o-transition: width 2s, height 2s,-o-transform 2s;
+}

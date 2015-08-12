@@ -1,0 +1,87 @@
+
+
+.fork {
+  border:0;
+  position:absolute;
+  top:0;
+  right:0;
+}
+
+.col {
+  width: 320px;
+  float: left;
+  margin-right:32px;
+  margin-bottom: 16px;
+}
+.c3 {
+  margin-right:0;
+}
+
+#all_messages #msg_header {
+  margin: 0;
+  font:12px/20px 'bariol_regularregular', 'ie8_bariol_regular';
+}
+
+#all_messages #msg_header a {
+ display: block;
+  padding: 10px;
+  margin: 0;
+  color: #1b303f;
+  text-decoration: none;
+  font-weight: normal;
+/*  border-bottom: 1px solid rgba(128, 10, 85, 0.5);
+  text-shadow: 1px 1px 1px rgb(128,10,85);*/
+}
+#all_messages #msg_header:hover { background: rgba(255,255,255, 0.3); border-top:1px #aeaead solid; margin-top:-1px; }
+#all_messages #msg_header.open  { background: rgba(255,255,255, 0.3); border-bottom:0; }
+#all_messages #msg_header.open a { display:block;}
+#all_messages #msg_header + div { padding: 10px; border-bottom:1px #aeaead solid; }
+
+#all_messages h2 + div,
+#all_messages .example {
+  background: #fff;
+  overflow: hidden;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  margin-bottom: 20px;
+}
+
+/* Pre hide sections with JavaScript on
+--- */
+#all_messages #msg_header+div {
+  display: none;
+}
+
+/* CSS3 Animation example
+--- */
+#messages_accordian #msg_header + div {
+  height: 0px;
+  padding: 0px;
+  overflow: hidden;
+background: rgba(255,255,255, 0.3);
+  display: block!important;
+  -webkit-transform: translateZ(0);
+  -webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+	-ms-transition:all 0.3s ease;
+	transition: all 0.3s ease;
+}
+#messages_accordian .content {
+  padding:0 10px 10px 10px;
+  font:11px/20px 'bariol_regularregular', 'ie8_bariol_regular';
+}
+
+#messages_accordian #msg_header.open + div {
+  height: auto;
+ background: rgba(255,255,255, 0.3);
+}
+
+/* Event example
+--- */
+pre#event-log {
+  background: rgba(255,255,255, 0.3);
+  padding: 10px;
+  display: block;
+}

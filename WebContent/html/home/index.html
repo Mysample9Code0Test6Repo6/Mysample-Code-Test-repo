@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>inCyyte</title>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../../ui/css/reset.css">
+<link rel="stylesheet" href="../../ui/css/style.css">
+<link rel="stylesheet" href="../../ui/css/layout.css">
+<link rel="stylesheet" href="../../ui/css/style_login.css">
+<link rel="stylesheet" href="../../ui/css/modal_window.css" type="text/css" media="screen">
+<link rel="stylesheet" href="../../fonts/fonts_stylesheet.css">
+<script src="../../ui/js/jquery-1.7.1.js"></script>
+<script src="../../ui/js/jcarousellite.js"></script>
+<script src="../../ui/js/login.js"></script>
+<script src="../../ui/js/jquery.limit.js"></script>
+<script type="text/javascript" src="../../ui/js/easySlider1.7.js"></script>
+<script type="text/javascript" src="../../ui/js/autoresize.jquery.js"></script>
+<script type="text/javascript" src="../../ui/js/jquery.js"></script>
+<script type="text/javascript" src="../../ui/js/jquery.lightbox-0.5.js"></script>
+<link rel="stylesheet" type="text/css" href="../../ui/css/jquery.lightbox-0.5.css" media="screen" />
+
+<script  type="text/javascript">
+    $(document).ready(function() {
+        $("#myTextarea2").limit({
+            limit: 150,
+            id_result: "counter",
+            alertClass: "alert"
+            });
+         });
+</script>
+<script type="text/javascript">
+		$(document).ready(function(){	
+			$("#slider").easySlider({
+				auto: true, 
+				continuous: true
+			});
+		});	
+	</script>
+<script type="text/javascript">
+    $(function() {
+        $('#gallery a').lightBox();
+    });
+    </script>
+<script>
+    // placeholder polyfill
+    $(document).ready(function(){
+        function add() {
+            if($(this).val() == ''){
+                $(this).val($(this).attr('placeholder')).addClass('placeholder');
+            }
+        }
+
+        function remove() {
+            if($(this).val() == $(this).attr('placeholder')){
+                $(this).val('').removeClass('placeholder');
+            }
+        }
+
+        // Create a dummy element for feature detection
+        if (!('placeholder' in $('<input>')[0])) {
+
+            // Select the elements that have a placeholder attribute
+            $('input[placeholder], textarea[placeholder]').blur(add).focus(remove).each(add);
+
+            // Remove the placeholder text before the form is submitted
+            $('form').submit(function(){
+                $(this).find('input[placeholder], textarea[placeholder]').each(remove);
+            });
+        }
+    });
+</script>
+</head>
+<body >
+<div id="gradient">
+  <div class="extra">
+    <!--header -->
+    <header>
+      <div id="headerinner">
+        <div id="logocontainer"><a href="#" id="logo">inCyyte</a></div>
+        <div id="info" >
+          <!-- Log in with faccebook and Twitter Starts Here -->
+          <div id="loginContainer"> <a href="#" id="loginButton"><span>LOG IN WITH <img src="../../ui/images/icon_small.png"></span><em></em></a>
+            <div style="clear:both"></div>
+            <div id="loginBox" >
+              <form id="loginForm" class="arrow_box">
+                <fieldset id="body">
+                <p class="login_text">Log In</p>
+                <button type="submit" id="faccebook"><span><img src="../../ui/images/facebook.png" align="absmiddle"></span>LOG IN WITH FACEBOOK</button>
+                <button type="submit" id="twitter" class="twitter_btn"> <span><img src="../../ui/images/twitter.png" align="absmiddle"></span>LOG IN WITH TWITTER </button>
+                </fieldset>
+              </form>
+            </div>
+          </div>
+          <!-- Log in with faccebook and Twitter Ends Here -->
+          <!-- Log in starts Here -->
+          <div id="loginContainer"> <a href="#" id="loginButton1"><span>LOG IN</span><em></em></a>
+            <div style="clear:both"></div>
+            <div id="loginBox1">
+              <form id="loginForm1" class="arrow_box">
+                <p class="login_text">Log In <span ><a href="#">Don't have an account yet?</a></span></p>
+                <fieldset id="body">
+                <input type="text" id="email" placeholder="Email" onFocus="this.placeholder = ''" onBlur="this.placeholder = 'Email'">
+                </input>
+                <br>
+                <input type="text" id="password" placeholder="Password" onFocus="this.placeholder = ''" onBlur="this.placeholder = 'Password'">
+                </input>
+                <div id="innerlogin">
+                  <button type="submit" id="login" class="button" >LOG IN</button>
+                </div>
+                <p class="login_text" style="margin:0 0 0 8px;"><span  ><a href="#">Forgotten your password?</a></span></p>
+                </fieldset>
+              </form>
+            </div>
+          </div>
+          <!-- Log in ends Here -->
+          <div id="divider"></div>
+          <!-- Sign up starts Here -->
+          <div id="loginContainer"> <a href="#" id="signupButton"><span>Sign Up For FREE</span><em></em></a>
+            <div style="clear:both"></div>
+            <div id="signupBox">
+              <form id="signUpForm" class="arrow_box">
+                <p class="login_text01">Sign up today, It's <span style="color:#cfff00; font-size:25px; font-family:bariol_boldbold;">FREE!</span> <br>
+                  <span >And...you can earn money too!</span></p>
+                <input type="text" id="email" placeholder="Email" onFocus="this.placeholder = ''" onBlur="this.placeholder = 'Email'">
+                </input>
+                <br>
+                <input type="text" id="confirmemail" placeholder="Confirm Email" onFocus="this.placeholder = ''" onBlur="this.placeholder = 'Confirm Email'">
+                </input>
+                <input type="text" id="password" placeholder="Password" onFocus="this.placeholder = ''" onBlur="this.placeholder = 'Password'">
+                </input>
+                <div id="signupbtn">
+                  <button type="submit" id="signup" class="button" >SIGN UP NOW</button>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div id="point"></div>
+          <!-- Sign up Ends Here -->
+          <div id="gallery">
+            <ul>
+              <li> <a href="../../ui/images/video_img.png" title="" style="float:right; padding:3px 12px 0 0;"> Take The Tour </a> </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!--header end-->
+    <div class="main">
+      <!--content -->
+      <article id="content_home">
+        <div id="main_content">
+          <h2 >What's your <strong>Question?</strong></h2>
+          <div class="smile_images"> <img src="../../ui/images/smile_faces.png" alt="" height="288" width="559"></div>
+          <div class="earn_more">
+            <h3>Poll friends and communities <br>
+              anonymously and even <span>earn <br>
+              money</span> by replying! </h3>
+            <div id="buttonaria" class="more_video1" ></div>
+          </div>
+        </div>
+      </article>
+      <!--content end -->
+    </div>
+    <div id="que_inner" >
+      <textarea placeholder="Type your question here... " onFocus="this.placeholder = ''" onBlur="this.placeholder = 'Type your question here...'" id="myTextarea2" maxlength="150"></textarea>
+      <div id="buttonaria_red" class="ask_que" ></div>
+      <div id="counter"></div>
+    </div>
+    <div id="bottom_shadow"><span><img src="../../ui/images/bottom_bg02.png"></span></div>
+    <div id="slider_container">
+      <div id="slider">
+        <ul>
+          <li>
+            <h3>Trending Questions</h3>
+            <br>
+            <p><strong>"</strong>Should the council put <strong>speed bumps</strong> along Church Drive, NG52BA?</p>
+          </li>
+          <li>
+            <h3>Trending Questions</h3>
+            <br>
+            <p><strong>"</strong>Should the council put <strong>speed bumps</strong> along Church Drive, NG52BA?</p>
+          </li>
+          <li>
+            <h3>Trending Questions</h3>
+            <br>
+            <p><strong>"</strong>Should the council put <strong>speed bumps</strong> along Church Drive, NG52BA?</p>
+          </li>
+          <li>
+            <h3>Trending Questions</h3>
+            <br>
+            <p><strong>"</strong>Should the council put <strong>speed bumps</strong> along Church Drive, NG52BA?</p>
+          </li>
+          <li>
+            <h3>Trending Questions</h3>
+            <br>
+            <p><strong>"</strong>Should the council put <strong>speed bumps</strong> along Church Drive, NG52BA?</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!--footer -->
+  <footer>
+    <div >
+      <div class="col colIndent">
+        <ul class="listWithMarker">
+          <li> <a href="#"><img src="../../ui/images/key.png" style="padding-bottom:12px;"></a> </li>
+          <li> <a href="#">Top Polls</a> </li>
+          <li> <a href="#">Search Questions</a> </li>
+          <li> <a href="#">Search Petitions</a> </li>
+        </ul>
+      </div>
+      <div class="col colIndent">
+        <ul class="listWithMarker">
+          <li> <a href="#"><img src="../../ui/images/signal.png" style="padding-bottom:12px;"></a> </li>
+          <li> <a href="#">Take The Tour</a> </li>
+          <li> <a href="#">What is inCyyte?</a> </li>
+          <li> <a href="#">inCyyte For BUsiness</a> </li>
+        </ul>
+      </div>
+      <div class="col colIndent">
+        <ul class="listWithMarker">
+          <li> <a href="#"><img src="../../ui/images/circle.png" style="padding-bottom:12px;"></a> </li>
+          <li> <a href="#">Anonimity  &amp; inCyyte</a> </li>
+          <li> <a href="#">The Red Card System</a> </li>
+          <li> <a href="#">FAQs</a> </li>
+        </ul>
+      </div>
+      <div class="col">
+        <ul class="listWithMarker">
+          <li> <a href="#"><img src="../../ui/images/book.png" style="padding-bottom:12px;"></a> </li>
+          <li> <a href="#">Terms &amp; Conditions</a> </li>
+          <li> <a href="#">Privacy Policy</a> </li>
+          <li> <a href="#">Contact Us</a> </li>
+        </ul>
+      </div>
+      <div style=" text-align:center; margin:140px 0 0 0; padding:0; color:#A4ACB2;"> © inCyyte 2012 All rights reserved - Website created by Alight <img src="../../ui/images/alight_logo.png" align="middle" style="padding-top:4px;"> </div>
+    </div>
+    <!-- {%FOOTER_LINK} -->
+  </footer>
+</div>
+<!--footer end-->
+<script>
+$(function () {
+  $("textarea").autoresize();
+})
+</script>
+</body>
+</html>

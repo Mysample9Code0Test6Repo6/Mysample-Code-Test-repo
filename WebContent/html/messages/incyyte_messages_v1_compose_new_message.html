@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>3 - inCyyte_Messages_V1_Compose New Message</title>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../../ui/css/reset.css">
+<link rel="stylesheet" href="../../ui/css/style.css">
+<link rel="stylesheet" href="../../ui/css/layout.css">
+<link rel="stylesheet" href="../../ui/css/buttons.css"  media="screen">
+<link rel="stylesheet" href="../../ui/css/style_login.css">
+<link rel="stylesheet" href="../../ui/css/accordionmenu.css" type="text/css">
+<link rel="stylesheet" href="../../ui/css/icons_sprites.css">
+<link rel="stylesheet" href="../../fonts/fonts_stylesheet.css">
+
+<script src="../../ui/js/jquery-1.4.2.min.js"></script>
+<script src="../../ui/js/jquery-1.7.1.js"></script>
+<script src="../../ui/js/login.js"></script>
+<script src="../../ui/js/jquery.color.js"></script>
+<script src="../../ui/js/search_script.js"></script>
+
+<!-- Left Navigation script starts here -->
+<script src="../../ui/js/left_menu.js"></script>
+<!-- Left Navigation script ends here -->
+<!--- placeholder Starts----->
+<script>
+    // placeholder polyfill
+    $(document).ready(function(){
+        function add() {
+            if($(this).val() == ''){
+                $(this).val($(this).attr('placeholder')).addClass('placeholder');
+            }
+        }
+
+        function remove() {
+            if($(this).val() == $(this).attr('placeholder')){
+                $(this).val('').removeClass('placeholder');
+            }
+        }
+
+        // Create a dummy element for feature detection
+        if (!('placeholder' in $('<input>')[0])) {
+
+            // Select the elements that have a placeholder attribute
+            $('input[placeholder], textarea[placeholder]').blur(add).focus(remove).each(add);
+
+            // Remove the placeholder text before the form is submitted
+            $('form').submit(function(){
+                $(this).find('input[placeholder], textarea[placeholder]').each(remove);
+            });
+        }
+    });
+</script>
+<!--- placeholder Ends----->
+<!--[if gte IE 8]>
+<style>
+#welcome_user { margin:9px auto 0 auto;}
+</style>
+<![endif]-->
+
+<!--[if gte IE 9]>
+  <style type="text/css">
+    span.title_green, .button_green:hover span.title_green, span.title_green1, .button_green1:hover span.title_green1 {
+       filter: none;
+    }
+	#myTextarea3 { line-height:100%;}
+	
+	#header_topnav_inner
+{
+margin-top:0px;
+}
+
+  </style>
+<![endif]-->
+</head>
+<body>
+<div id="gradient">
+  <div class="extra">
+    <!--header -->
+    <header class="header36">
+      <div id="headerinner">
+        <div id="logocontainer"><a href="#" id="logo_inner">inCyyte</a></div>
+        <div id="header_topnav_inner">
+          <ul id="header_topmenu">
+            <li><a href="#" >Home</a></li>
+            <li><a href="#" >Messages</a></li>
+            <li><a href="#" >Contacts</a></li>
+            <li class="last"><a href="#" >Groups</a></li>
+            <li style="padding-right:14px;">
+              <form id="searchform_top">
+                <input type='text' name="top_search" id="top_search"  placeholder="Search for people, questions etc." onFocus="this.placeholder = ''" onBlur="this.placeholder = 'Search for people, questions etc.'">
+                <input type="submit" id="searchSubmit_top" value="" />
+              </form>
+            </li>
+            <!-- User settings starts Here -->
+            <li id="usernameContainer" class="last"> <a href="#" id="top_userName"><span>Settings</span><em></em></a>
+              <!--<div style="clear:both"></div>
+                <div id="userBox">
+                  <div id="userForm" >
+                    <p class="login_text01">You are in the N6 InCyyte Region <br>
+                      <span >Rating: Influential </span>More Ration Details<br>
+                    <div class="hline"></div>
+                    <a href="#">My Account</a><br>
+                    <a href="#">Edit Profile</a><br>
+                    <a href="#">Edit Settings</a>
+                    </p>
+                  </div>
+                </div>-->
+            </li>
+            <!-- User User settings Ends Here -->
+            <li class="last"><a href="#" >Log Out</a></li>
+          </ul>
+        </div>
+		<!-- Welcome User Start---->
+		<div id="welcome_user">
+          <div id="userphoto"><img src="../../ui/images/user_photo.png"></div>
+          <p class="username">Welcome Julian. <span>You are in the N6 region.</span></p>
+          <p class="view_polls"><a href="#">Click here to view polls in your region.</a></p>
+        </div>
+		<!-- Welcome User End---->
+      </div>
+    </header>
+    <!--header end-->
+    <div class="main">
+      <!--content -->
+      <article id="content">
+        <div id="main_content">
+          <div class="grid_9">
+            <h1>Messages</h1>
+            <nav>
+              <script type="text/javascript" src="../../ui/includes/leftmenu_messages.js"></script>
+            </nav>
+            <div class="hline"></div>
+            <div id="advert"><img src="../../ui/images/advert.png" alt="Advert"></div>
+          </div>
+          <div class="line"><span></span></div>
+          <div class="grid_17">
+            <!--Send New Message Start -->
+            <div id="send_new_msg">
+              <h4>Send New <span>Message</span></h4>
+			  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td height="70" valign="top"><label>To:</label><input type="text" id="to" onFocus="this.placeholder = ''" onBlur="this.placeholder = 'Enter Contact Name'" placeholder="Enter Contact Name" ></input></td>
+  </tr>
+  <tr>
+    <td width="47%"><label>Message:</label><textarea  onFocus="this.placeholder = ''" onBlur="this.placeholder = 'Add your message here...'" placeholder="Add your message here..."></textarea></td>
+    </tr>
+  
+  <tr>
+    <td><a href="#" title="Send Message" id="" class="button_green1" style="margin-top:20px; width:162px; float:right;"> <span class="title_green1">SEND MESSAGE</span></a></td>
+    </tr>
+</table>
+		    </div>
+            <!-- Send New Message Ends-->
+          </div>
+        </div>
+      </article>
+      <!--content ends -->
+    </div>
+  </div>
+  <!--footer Starts -->
+  <footer class="footer_inner">
+    <div style=" text-align:center; "> © inCyyte 2012 All rights reserved - Website created by Alight <img src="../../ui/images/alight_logo_inner.png" align="middle" style="padding-top:4px;"> </div>
+  </footer>
+</div>
+<!--footer ends -->
+</body>
+</html>

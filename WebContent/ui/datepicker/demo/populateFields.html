@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC
+          "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <title>Calendar</title>
+    <script src="../src/js/jscal2.js"></script>
+    <script src="../src/js/lang/en.js"></script>
+    <link rel="stylesheet" type="text/css" href="../src/css/jscal2.css" />
+    <!--<link rel="stylesheet" type="text/css" href="../src/css/border-radius.css" />-->
+    <link rel="stylesheet" type="text/css" href="../src/css/steel/steel.css" />
+	<link rel="stylesheet" type="text/css" href="../../../fonts/fonts_stylesheet.css">
+  </head>
+  <body>
+    <form>
+      <table>
+        <tr>
+          <td colspan="4" id="cont"></td>
+        </tr>
+        <tr>
+          <td>
+            <input style="text-align: center" readonly="true" name="date" id="f_date" size="14" />
+          </td>
+          <td>
+            <input style="text-align: center" readonly="true" name="hour" id="f_hour" size="2" />
+          </td>
+          <td>:</td>
+          <td>
+            <input style="text-align: center" readonly="true" name="minute" id="f_minute" size="2" />
+          </td>
+        </tr>
+      </table>
+    </form>
+    <script type="text/javascript">//<![CDATA[
+
+      // this handler is designed to work both for onSelect and onTimeChange
+      // events.  It updates the input fields according to what's selected in
+      // the calendar.
+      function updateFields(cal) {
+              var date = cal.selection.get();
+              if (date) {
+                      date = Calendar.intToDate(date);
+                      document.getElementById("f_date").value = Calendar.printDate(date, "%Y-%m-%d");
+              }
+              document.getElementById("f_hour").value = cal.getHours();
+              document.getElementById("f_minute").value = cal.getMinutes();
+      };
+
+      Calendar.setup({
+              cont         : "cont",
+              showTime     : 12,
+              onSelect     : updateFields,
+              onTimeChange : updateFields
+      });
+
+    //]]></script>
+  </body>
+</html>

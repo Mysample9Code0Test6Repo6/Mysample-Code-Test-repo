@@ -1,0 +1,82 @@
+#gradient {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 670px;
+    /*background: url(../images/top-shadow.png) repeat-x;*/
+}
+
+#que_inner {
+    background: #c7c3c1;
+    position:relative;
+
+}
+
+#bottom_shadow {
+    background: #c7c3c1;
+   z-index:-1;
+}
+#bottom_shadow span
+{
+ background: none;
+}
+
+#btn-ask
+{
+background: #C4133C;
+}
+.button_gray
+{
+	background: #B2B1AD;
+}
+.button_green
+{
+	background:#f5f5f5;
+}
+.button_red {
+	background:#e0dfdd;
+}
+
+/****** leftmenu *******/
+
+.accordion li a {
+}
+
+.accordion li a:hover,
+.accordion li a.active {
+background: #fff url(../images/leftmenu_wtbg.png) no-repeat 0px 0px;
+color:#c2002d;
+}
+
+.page-numbers, .page-numbers a
+{
+background:#f3f2f0;
+}
+.current, .page-numbers:hover
+{
+background:#1B303F;
+}
+.sent_incyyte tbody tr:hover td, #contact_list tbody tr:hover td
+{
+	background:url(../images/light_gray_bg.png) repeat;
+
+}
+#welcome_user
+{
+	margin-top:-55px;
+}
+#ask_que_category, #choose_your_answers_heading, #choose_your_answers, .openquestion, .question_detail, #welcome_user, .incomming_incyyte_detail, #alpha_list li a:hover, #alpha_list li a:active, .message_tab:hover, .message_detail, .openmessage, #create_a_group, .expanded_incyyte_heading, .expanded_incyyte
+{
+	background:url(../images/gray_bg.png) repeat;
+
+}
+
+#categories_container, #send_your_poll_top, #send_your_poll_left, #send_your_poll_right, #review_and_send_top, #searchbox, #advanced_searchbox, #select_a_group, #add_contacts_to_group, #create_a_group, #group_name
+{
+background:url(../images/dark_gray.png) repeat;
+}
+#profile_picture, #profile_name, #profile_location, #more_abt_me, #wht_i_like, #change_password
+{
+	border-bottom:1px solid #AEAEAD;
+}

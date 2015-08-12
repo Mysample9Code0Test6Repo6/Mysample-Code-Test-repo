@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>Settings_V2_Setup Profile Edit States.png</title>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../../ui/css/reset.css">
+<link rel="stylesheet" href="../../ui/css/style.css">
+<link rel="stylesheet" href="../../ui/css/layout.css">
+<link rel="stylesheet" href="../../ui/css/buttons.css"  media="screen">
+<link rel="stylesheet" href="../../ui/css/style_login.css">
+<link rel="stylesheet" href="../../ui/css/accordionmenu.css" type="text/css">
+<link rel="stylesheet" href="../../ui/css/icons_sprites.css">
+<link rel="stylesheet" href="../../fonts/fonts_stylesheet.css">
+<link rel="stylesheet" href="../../ui/css/style_help.css">
+<link rel="stylesheet" href="../../ui/modal/colorbox.css">
+<link rel="stylesheet" href="../../ui/css/ratingbar.css" type="text/css" />
+<link rel="stylesheet" href="../../ui/css/form_elements.css" type="text/css" />
+<link rel="stylesheet" href="../../ui/css/jquery.selectbox.css" type="text/css" />
+<script type="text/javascript" src="../../ui/js/jquery-1.8.3.min.js"></script> 
+
+<script src="../../ui/js/login.js"></script>
+<script src="../../ui/js/jquery.color.js"></script>
+<script src="../../ui/js/search_script.js"></script>
+<script src="../../ui/js/jquery_profile_rating.js" type="text/javascript"></script>
+<script src="../../ui/js/star_rating.js" type="text/javascript"></script>
+<script src="../../ui/js/customSelect.jquery.js" type="text/javascript"></script>
+<script src="../../ui/modal/colorbox/jquery.colorbox.js"></script>
+<!-- Left Navigation script starts here -->
+<script src="../../ui/js/left_menu.js"></script>
+<!-- Left Navigation script ends here -->
+<script type="text/javascript" src="../../ui/js/jquery.selectbox-0.2.js"></script>
+<script type="text/javascript">
+		$(function () {
+			$("select").selectbox();
+			//$("#country_id1").selectbox();
+		});
+		</script>
+
+<!--- placeholder Starts----->
+<script>
+    // placeholder polyfill
+    $(document).ready(function(){
+        function add() {
+            if($(this).val() == ''){
+                $(this).val($(this).attr('placeholder')).addClass('placeholder');
+            }
+        }
+
+        function remove() {
+            if($(this).val() == $(this).attr('placeholder')){
+                $(this).val('').removeClass('placeholder');
+            }
+        }
+
+        // Create a dummy element for feature detection
+        if (!('placeholder' in $('<input>')[0])) {
+
+            // Select the elements that have a placeholder attribute
+            $('input[placeholder], textarea[placeholder]').blur(add).focus(remove).each(add);
+
+            // Remove the placeholder text before the form is submitted
+            $('form').submit(function(){
+                $(this).find('input[placeholder], textarea[placeholder]').each(remove);
+            });
+        }
+    });
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+
+
+$("#help a").append("<em></em>");
+	
+	$("#help a").hover(function() {
+		$(this).find("em").animate({opacity: "show", top: "35"}, "fast");
+		var hoverText = $(this).attr("title");
+	    $(this).find("em").text(hoverText);
+	}, function() {
+		$(this).find("em").animate({opacity: "hide", top: "50"}, "fast");
+	});
+
+});
+</script>
+<!--- placeholder Ends----->
+<!--- Modal ----->
+<script>
+			$(document).ready(function(){
+				//Examples of how to assign the ColorBox event to elements
+				$(".photos").colorbox({rel:'photos'});
+				$(".group2").colorbox({rel:'group2', transition:"fade"});
+				$(".group3").colorbox({rel:'group3', transition:"none", width:"75%", height:"75%"});
+				$(".group4").colorbox({rel:'group4', slideshow:true});
+				$(".ajax").colorbox();
+				$(".youtube").colorbox({iframe:true, innerWidth:425, innerHeight:344});
+				$(".vimeo").colorbox({iframe:true, innerWidth:500, innerHeight:409});
+				$(".iframe").colorbox({iframe:true, width:"80%", height:"80%"});
+				$(".inline").colorbox({inline:true});
+				$(".callbacks").colorbox({
+					onOpen:function(){ alert('onOpen: colorbox is about to open'); },
+					onLoad:function(){ alert('onLoad: colorbox has started to load the targeted content'); },
+					onComplete:function(){ alert('onComplete: colorbox has displayed the loaded content'); },
+					onCleanup:function(){ alert('onCleanup: colorbox has begun the close process'); },
+					onClosed:function(){ alert('onClosed: colorbox has completely closed'); }
+				});
+				
+				//Example of preserving a JavaScript event for inline calls.
+				$("#click").click(function(){ 
+					$('#click').css({"background-color":"#f00", "color":"#fff", "cursor":"inherit"}).text("Open this window again and this message will still be here.");
+					return false;
+				});
+			});
+		</script>
+<!--- Mddal--------------->
+<!--[if gte IE 8]>
+<style>
+#welcome_user { margin:9px auto 0 auto;}
+</style>
+<![endif]-->
+<!--[if gte IE 9]>
+  <style type="text/css">
+    span.title_green, .button_green:hover span.title_green, span.title_green1, .button_green1:hover span.title_green1 {
+       filter: none;
+    }
+	#myTextarea3 { line-height:100%;}
+	
+	#header_topnav_inner
+{
+margin-top:0px;
+}
+
+  </style>
+<![endif]-->
+</head>
+<body>
+<div id="gradient">
+  <div class="extra">
+    <!--header -->
+    <header class="header36">
+      <div id="headerinner">
+        <div id="logocontainer"><a href="#" id="logo_inner">inCyyte</a></div>
+        <div id="header_topnav_inner">
+          <ul id="header_topmenu">
+            <li><a href="#" >Home</a></li>
+            <li><a href="#" >Messages</a></li>
+            <li><a href="#" >Contacts</a></li>
+            <li class="last"><a href="#" >Groups</a></li>
+            <li style="padding-right:14px;">
+              <form id="searchform_top">
+                <input type='text' name="top_search" id="top_search"  placeholder="Search for people, questions etc." onFocus="this.placeholder = ''" onBlur="this.placeholder = 'Search for people, questions etc.'">
+                <input type="submit" id="searchSubmit_top" value="" />
+              </form>
+            </li>
+            <!-- User settings starts Here -->
+            <li id="usersettingContainer" class="last"> <a href="#" id="user_setting"><span>Settings</span><em></em></a>
+              <div style="clear:both"></div>
+              <div id="usersettingBox">
+                <div id="usersettingForm" >
+                  <p>You are in the <u>N6</u> InCyyte Region </p>
+                  <p style="padding-bottom:8px;">Rating: Influential </p>
+                  <div id="fixed">
+                    <p class="more_rating_details"><a href="#more_incyyte_rating" class="inline">More Rating Details</a></p>
+                  </div>
+                  <p class="hline_setting"></p>
+                  <ul>
+                    <li><a href="#">My Account</a></li>
+                    <li><a href="#">Edit Profile</a></li>
+                    <li><a href="#">Edit Settings</a></li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <!-- User User settings Ends Here -->
+            <li class="last"><a href="#" >Log Out</a></li>
+          </ul>
+        </div>
+        <!--More Incyyte rating Start---->
+        <div style="display:none;">
+          <div id="more_incyyte_rating" >
+            <h3>My InCyyte Rating</h3>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td width="17%" height="85"><img src="../../ui/images/profile_picture_rating.png" alt="Profile Picture"></td>
+                <td width="34%"><p>User Name</p>
+                  <p style="padding-bottom:10px;">Rating: Influential</p>
+                  <div id="fixed"></div></td>
+                <td width="49%" align="right"><p>Recipient response rate:</p>
+                  <p class="rating_per">85%</p></td>
+              </tr>
+              <tr>
+                <td colspan="3" style="border-bottom:1px solid #fff;"></td>
+              </tr>
+              <tr>
+                <td colspan="3" height="40">Member Since .......</td>
+              </tr>
+              <tr>
+                <td colspan="3"><table width="100%" border="0" cellspacing="0" cellpadding="0" class="rating_detail_table">
+                    <tr>
+                      <td>InCyyte Polls</td>
+                      <td>Recipients</td>
+                      <td>Responses</td>
+                      <td>Regions</td>
+                    </tr>
+                    <tr class="alt">
+                      <td>150</td>
+                      <td>10,132</td>
+                      <td>8,496</td>
+                      <td>19</td>
+                    </tr>
+                  </table></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <!-- More Incyyte rating Start---->
+        <!-- Welcome User Start---->
+        <div id="welcome_user">
+          <div id="userphoto"><img src="../../ui/images/user_photo.png"></div>
+          <p class="username">Welcome Julian. <span>You are in the N6 region.</span></p>
+          <p class="view_polls"><a href="#">Click here to view polls in your region.</a></p>
+        </div>
+        <!-- Welcome User End---->
+      </div>
+    </header>
+    <!--header end-->
+    <div class="main">
+      <!--content -->
+      <article id="content">
+        <div id="main_content">
+          <div class="grid_9">
+           <h1>Edit Profile</h1>
+            <nav>
+              <script type="text/javascript" src="../../ui/includes/leftmenu_account_setting.js"></script>
+            </nav>
+            <div class="hline"></div>
+            <h3 >PROFILE OVERVIEW</h3>
+            <br>
+            <div class="tokens">You Have &pound;999!</div>
+            <div id="progress_bar1">
+              <div id="progress1" style="width:110px"></div>
+              <div id="progress_text1">Your Profile is 40% Complete</div>
+            </div>
+            <br>
+            <h1 class="font_18px">Fill In your:</h1>
+            <ul class="redtext">
+              <li> <span> >> </span> <a href="#">Address</a></li>
+              <li> <span> >> </span> <a href="#">Postcode</a> </li>
+            </ul>
+            <div id="advert"><img src="../../ui/images/advert.png" alt="Advert"></div>
+          </div>
+          <div class="line"><span></span></div>
+          <div class="grid_17">
+            <!--- Edit Profile Starts---->
+            <div id="edit_profile_setup" >
+              
+              <div id="profile_picture">
+                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td valign="top" class="heading4">Picture</td>
+                    <td valign="top">&nbsp;</td>
+                    <td valign="top" class="heading4">My Opinion</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" rowspan="3" valign="top"><img src="../../ui/images/profile_picture.png" alt="Profile Picture"></td>
+                    <td valign="bottom"><a href="" title="UPLOAD A NEW PHOTO" id="" class="button_gray" style="width:210px; float:left; margin-bottom:20px;"> <span class="title_gray">UPLOAD A NEW PHOTO</span></a></td>
+                    <td width="41%" rowspan="3" valign="top" ><label>Write a short statement below</label>
+                      <textarea name="textarea" cols=""></textarea>
+                      <br>
+                      <p>This will be shown on your profile.<span class="save_check"><a href="#">Save</a> </span></P></td>
+                  </tr>
+                  <tr>
+                    <td height="26" valign="top" class="font_14px">Maximum size of 700k. JPG, GIF, PNG.</td>
+                  </tr>
+                  <tr>
+                    <td valign="top" class="font_16px"><a href="#">Delete this image</a></td>
+                  </tr>
+                </table>
+              </div>
+
+              <div id="profile_name">
+                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td valign="top" class="heading4">Name</td>
+                    <td valign="top">&nbsp;</td>
+                  </tr>
+                  <tr>
+                    <td valign="top" width="76%"><label>User Name * </label>
+                      <input type="text" id="uname" >
+                      </input>
+                      <br>
+                      <p>This will be shown on your profile</p></td>
+                    <td width="24%"><a href="" title="Save" id="save" class="button_green" style="width:60px; float:right; margin-bottom:8px;"> <span class="title_green">SAVE</span></a></td>
+             
+                  </tr>
+                  <tr>
+                    <td width="74%"><label>First Name</label>
+                      <input type="text" id="fname" >
+                      </input><br>
+                      <p></p></td>
+                    <td width="24%"><a href="" title="Save" id="save" class="button_green" style="width:60px; float:right; margin-bottom:8px;"> <span class="title_green">SAVE</span></a></td>
+                  </tr>
+                   <tr>
+                    <td width="74%"><label>Last Name</label>
+                      <input type="text" id="lname" >
+                      </input><br>
+                      <p></p></td>
+                    <td width="24%"><a href="" title="Save" id="save" class="button_green" style="width:60px; float:right; margin-bottom:8px;"> <span class="title_green">SAVE</span></a></td>
+                  </tr>
+                </table>
+              </div>
+              <div id="more_abt_me">
+                <h3 class="heading4" >More About Me</h3>
+                <p>This is private but it helps us give you a better experiece while you are using inCyyte.</p>
+                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td><label>Country</label>
+                      <input type="text" id="country" value="United Kingdom" readonly="true" class="readonly_input" style="border:0;">
+                      </input></td>
+                    <td valign="middle"><p class="edit"><a href="#">Edit</a></p></td>
+                  </tr>
+                  <tr>
+                    <td width="76%" align="left"><label>Location/City</label>
+                      <input type="text" id="location" >
+                      </input></td>
+                    <td width="24%" valign="bottom"><a href="" title="Save" id="save" class="button_green" style="width:60px; float:right; margin-bottom:8px;"> <span class="title_green">SAVE</span></a></td>
+                  </tr>
+                  <tr>
+                    <td><label>Post Code *</label>
+                    <input type="text" id="pcode" >
+                      </input>
+                      <p>The ﬁrst part of your post code will be used to help us provide you with more relevant polls.</p></td>
+                    <td><a href="" title="Save" id="save" class="button_green" style="width:60px; float:right;"> <span class="title_green">SAVE</span></a></td>
+                  </tr>
+                  <tr>
+                    <td><label>Mobile Number</label>
+                      <input type="text" id="mobile" value="07971243579" readonly="true" class="readonly_input" style="border:0;">
+                      </input></td>
+                    <td valign="middle"><p class="edit"><a href="#">Edit</a></p></td>
+                  </tr>
+                  <tr>
+                    <td><label>Email *</label>
+                      <input type="text" id="email1" >
+                      </input>
+                    </td>
+                    <td valign="bottom"><span style="padding:0px 10px 0px 10px; ">Defualt</span> <a href="" title="Save" id="save" class="button_green" style="width:60px; float:right; "> <span class="title_green">SAVE</span></a> </td>
+                  </tr>
+                  <tr>
+                    <td><input type="text" id="email2" >
+                      </input></td>
+                    <td valign="bottom"><span style="padding:0px 10px 0px 10px;">Make Defualt</span> <a href="" title="Save" id="save" class="button_green" style="width:60px; float:right;"> <span class="title_green">SAVE</span></a></td>
+                  </tr>
+                  <tr>
+                    <td height="30" valign="top"><a href="#">+ Add Another email</a></td>
+                    <td>&nbsp;</td>
+                  </tr>
+                  <tr>
+                    <td colspan="2" class="hline" height="10"></td>
+                  </tr>
+                  <tr>
+                    <td><label>Date of Birth</label></td>
+                    <td>&nbsp;</td>
+                  </tr>
+                  <tr>
+                    <td class="font_14px"><table width="80%" border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                          <td width="4%">D</td>
+                          <td width="28%"><p class="selectDate">
+                              <select name="select" id="date" >
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                              </select>
+                            </p></td>
+                          <td width="4%">M</td>
+                          <td width="29%"><p class="selectDate">
+                              <select name="select" id="month" >
+                                <option>Jan</option>
+                                <option>Feb</option>
+                                <option>Mar</option>
+                                <option>Apr</option>
+                                <option>May</option>
+                              </select>
+                            </p></td>
+                          <td width="4%">Y</td>
+                          <td width="31%"><p class="selectDate">
+                              <select name="select" id="year" >
+                                <option>2001</option>
+                                <option>2002</option>
+                                <option>2003</option>
+                                <option>2004</option>
+                                <option>2005</option>
+                              </select>
+                            </p></td>
+                        </tr>
+                      </table></td>
+                    <td>&nbsp;</td>
+                  </tr>
+                  <tr>
+                    <td><label>Gender</label>
+                      <select name="" >
+                        <option>Select One</option>
+                        <option>Select One</option>
+                        <option>Select One</option>
+                        <option>Select One</option>
+                        <option>Select One</option>
+                      </select></td></td>
+                    <td><a href="" title="Save" id="save" class="button_green" style="width:60px; float:right;"> <span class="title_green">SAVE</span></a></td>
+                  </tr>
+                  <tr>
+                    <td><label>Occupation</label>
+                      <select name="" >
+                        <option>Select One</option>
+                        <option>Select One</option>
+                        <option>Select One</option>
+                        <option>Select One</option>
+                        <option>Select One</option>
+                      </select></td></td>
+                    <td><a href="" title="Save" id="save" class="button_green" style="width:60px; float:right;"> <span class="title_green">SAVE</span></a></td>
+                  </tr>
+                  <tr>
+                    <td><label>Religion</label>
+                      <select name="" >
+                        <option>Select One</option>
+                        <option>Select One</option>
+                        <option>Select One</option>
+                        <option>Select One</option>
+                        <option>Select One</option>
+                      </select></td>
+                    <td><a href="" title="Save" id="save" class="button_green" style="width:60px; float:right;"> <span class="title_green">SAVE</span></a></td>
+                  </tr>
+                  <tr>
+                    <td><label>Sexuality</label>
+                      <input type="text" id="mobile" value="Rather Not Say" readonly class="readonly_input" style="border:0;">
+                      </input></td>
+                    <td><p class="edit"><a href="#">Edit</a></p></td>
+                  </tr>
+                  <tr>
+                    <td><label>Income</label>
+                      <input type="text" id="mobile" value="Rather Not Say" readonly class="readonly_input" style="border:0;">
+                      </input></td>
+                    <td><p class="edit"><a href="#">Edit</a></p></td>
+                  </tr>
+                </table>
+              </div>
+              <div id="wht_i_like">
+                <h3 class="heading4" >What I Like</h3>
+				<p>Choose categories that you like so we can send you polls that interest you. You can change this at any time.</p>
+				<div class="col_setting colIndent_setting">
+                <div id="choice_list">
+                  <ul>
+                    <li ><a class="music_choice active1" href="#" alt="Music" title="Music">Music <span class="active"></span></a></li>
+                    <li ><a class="sports_choice" href="#" alt="Sports" title="Sports">Sports <span></span></a></li>
+                    <li ><a class="religion_choice" href="#" alt="Religion" title="Religion">Religion <span></span></a></li>
+                    <li ><a class="politics_choice" href="#" alt="Politics" title="Politics">Politics <span></span></a></li>
+                    <li ><a class="community_choice" href="#" alt="Community" title="Community">Community <span></span></a></li>
+                    <li ><a class="relationships_choice"href="#" alt="Relationships" title="Relationships">Relationships <span></span></a></li>
+                  </ul>
+                </div>
+				</div>
+				
+				
+				<div class="col_setting colIndent_setting">
+                <div id="choice_list">
+                  <ul>
+                    <li ><a class="work_related_choice" href="#" alt="Work Related" title="Work Related">Work Related <span></span></a></li>
+                    <li ><a class="shopping_choice" href="#" alt="Shopping" title="Shopping">Shopping <span></span></a></li>
+                    <li ><a class="health_medical_choice" href="#" alt="Health Medical" title="Health Medical">Health Medical <span></span></a></li>
+                    <li ><a class="fitness_beauty_choice" href="#" alt="Fitness Beauty" title="Fitness Beauty">Fitness Beauty <span></span></a></li>
+                    <li ><a class="travel_choice" href="#" alt="Travel" title="Travel">Travel <span></span></a></li>
+                    <li ><a class="food_drink_choice" href="#" alt="Food Drink" title="Food Drink">Food Drink <span></span></a></li>
+                  </ul>
+                </div>
+				</div>
+				
+				
+				<div class="col_setting colIndent_setting">
+                <div id="choice_list">
+                  <ul>
+				  	<li ><a class="motoring_choice" href="#" alt="Motoring" title="Motoring">Motoring <span></span></a></li>
+                    <li ><a class="computer_internet_choice" href="#" alt="Computer Internet" title="Computer Internet">Computer Internet <span></span></a></li>
+                    <li ><a class="entertainment_choice" href="#" alt="Entertainment" title="Entertainment">Entertainment <span></span></a></li>
+                    <li ><a class="other_choice" href="#" alt="Other" title="Other">Other <span></span></a></li>
+                  </ul>
+                </div>
+				</div>
+				
+              </div>
+            </div>
+            <!--- Edit Profile Ends---->
+          </div>
+        </div>
+      </article>
+      <!--content ends -->
+    </div>
+  </div>
+  <!--footer Starts -->
+  <footer class="footer_inner">
+    <div style=" text-align:center; "> © inCyyte 2012 All rights reserved - Website created by Alight <img src="../../ui/images/alight_logo_inner.png" align="middle" style="padding-top:4px;"> </div>
+  </footer>
+</div>
+<!--footer ends -->
+</body>
+</html>

@@ -1,0 +1,51 @@
+/* CSS Document */
+
+.error_wrapper
+{
+	background: rgba(0,0,0, 0.1);
+	margin:10px  auto 0 auto;
+	padding:25px;
+	width:916px;
+	height:350px;
+	font:16px 'bariol_regularregular', 'ie8_bariol_regular';
+	color:#1B303F;
+	border-radius:35px;
+	-moz-border-radius:35px;
+	-webkit-border-radius:35px;
+}
+
+
+.errorbox
+{
+	font:14px/20px 'bariol_regularregular', 'ie8_bariol_regular';
+	padding:13px 15px;
+	background:#fff;
+	border:2px solid #d3605d;
+	margin:80px 0 10px 0;
+	border-radius:5px;
+	-moz-border-radius:5px;
+	-o-border-radius:5px;
+	-webkit-border-radius:5px;
+	position:relative;
+	text-align:center;
+}
+.icon_error
+{
+	width:100px;
+	height:100px;
+	background:url(../images/icon_error.png) no-repeat;
+	margin:0 auto 10px auto;
+}
+
+.error_text 
+{
+	color:#c2c2c2;
+	font-size: 60px;
+	padding-right:10px;
+}
+.error_dis 
+{
+	color:#333333;
+	font-size: 24px;
+
+}

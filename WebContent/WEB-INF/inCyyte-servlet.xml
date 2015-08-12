@@ -1,0 +1,386 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:aop="http://www.springframework.org/schema/aop"
+xmlns:context="http://www.springframework.org/schema/context"
+xmlns:jee="http://www.springframework.org/schema/jee"
+xmlns:tx="http://www.springframework.org/schema/tx"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:mvc="http://www.springframework.org/schema/mvc"
+xsi:schemaLocation="http://www.springframework.org/schema/aop
+http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context-2.5.xsd
+http://www.springframework.org/schema/jee
+http://www.springframework.org/schema/jee/spring-jee-2.5.xsd
+http://www.springframework.org/schema/tx
+http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
+http://www.springframework.org/schema/mvc
+http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
+    
+  	<context:component-scan base-package="com.incyyte.app" />
+     <mvc:annotation-driven />
+  	
+  	<bean id="userSettingsService" class="com.incyyte.app.service.UserSettingsServiceImpl" />
+  	<bean name="requestDataValueProcessor" class="com.incyyte.app.web.controller.csrf.CSRFRequestDataValueProcessor"/>
+
+	<mvc:interceptors>
+		<bean class="com.incyyte.app.web.controller.csrf.CSRFHandlerInterceptor"/>
+ 	</mvc:interceptors>
+  	
+  	<bean id="jacksonMessageConverter" class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter"></bean>
+  	<bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+		<property name="messageConverters">
+  			<list>
+  			    <ref bean="jacksonMessageConverter"/>
+  			</list>
+		</property>
+  	</bean>
+	
+<!--Declare Resource Bundle File for Messages-->
+  <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+    <property name="basenames">
+   		<list>
+   			<value>messages</value>
+         	<value>quickstart</value>
+          	<value>signup</value>
+          	<value>profile</value>
+          	<value>errorMessages</value>
+      </list>
+    </property>
+  </bean>
+  
+<!-- Externalise Configuration -->  
+  <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+   	<property name="locations">
+		<list>
+            <value>classpath:conf/c3p0.properties</value>
+            <value>classpath:conf/incyyte.properties</value>
+		</list>
+	</property>   
+  </bean>
+
+	<!-- Configure the multipart resolver -->  	
+    <bean id="multipartResolver"   class="org.springframework.web.multipart.commons.CommonsMultipartResolver"/>
+
+<!--END: declare controllers-->
+
+	<bean id="questionStyle" class="com.incyyte.app.web.xml.QuestionStyle">
+		<property name="quickStartSrv" ref="quickStartSrv" />
+	</bean>
+   
+<!--VIEW RESOLVERS-->
+    <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="viewClass"><value>org.springframework.web.servlet.view.JstlView</value></property>
+        <property name="prefix"><value>/WEB-INF/jsp/</value></property>
+        <property name="suffix"><value>.jsp</value></property>
+    </bean>
+    <bean id="beanNameViewResolver" class="org.springframework.web.servlet.view.BeanNameViewResolver">
+        <property name="order"><value>1</value></property>
+    </bean>
+ 
+    <bean id="groupValidator" class="com.incyyte.app.web.controller.GroupValidator" />
+    <bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+		<property name="exceptionMappings">
+			<props>
+				<prop key="com.incyyte.app.exception.MaxUploadSizeException">
+					error/maxupload_error_page
+		        </prop>
+				<prop key="org.springframework.web.multipart.MaxUploadSizeExceededException">
+					error/maxupload_error_page
+		        </prop>
+			</props>
+		</property>		
+	</bean>
+        
+ 
+ <!--EXCEPTION RESOLVER-->
+	<!-- <bean id="exceptionResolver" class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+		<property name="exceptionMappings">
+		<props>
+			<prop key="java.lang.Exception">systemError</prop>
+		</props>
+		</property>	
+	</bean>	 -->
+	 
+ <!--SERVICES-->     	
+    <bean id="addressMgr" class="com.incyyte.app.manager.AddressLocatorServiceManager">
+          <property name="addressDaoImpl" ref="addressDaoImpl" />
+    </bean>    
+    <bean id="quickStartSrv" class="com.incyyte.app.service.QuickStartServiceImpl">	
+          <property name="quickStartMgr" ref="quickStartMgr" />
+          <property name="contactMgr" ref="contactMgr" />
+    </bean>    
+    <bean id="quickStartMgr" class="com.incyyte.app.manager.QuickStartServiceManager">
+    	  <property name="groupDao" ref="groupDao" />
+          <property name="userDaoImpl" ref="userDaoImpl" />
+          <property name="emailMgr" ref="emailMgr" />          
+    </bean>
+    <bean id="registrationSrv" class="com.incyyte.app.service.RegistrationServiceImpl">	
+          <property name="registrationMgr" ref="registrationMgr" />
+    </bean>    
+    
+    <bean id="contactSrv" class="com.incyyte.app.service.ContactServiceImpl"/>
+    
+    <bean id="questnSrv" class="com.incyyte.app.service.QuestionServiceimpl"/>
+    
+    <bean id="lookupSrv" class="com.incyyte.app.service.LookupServiceImpl" />
+    <bean id="lookupMgr" class="com.incyyte.app.manager.LookupManagerImpl" />
+	<bean id="lookupDao" class="com.incyyte.app.dao.core.LookupDaoImpl" />
+
+	    
+    <bean id="taxDetailSrv" class="com.incyyte.app.service.TaxDetailServiveImpl" />
+    <bean id="taxDetailMgr" class="com.incyyte.app.manager.TaxDetailManagerImpl" />
+	<bean id="taxDetailDao" class="com.incyyte.app.dao.core.TaxDetailDaoImpl" />
+	
+    <bean id="messagesService" class="com.incyyte.app.service.MessagesServiceImpl">	
+          <property name="messagesManager" ref="messagesManager" />
+    </bean>
+    <bean id="userProfileService" class="com.incyyte.app.service.ProfileServiceImpl" >
+           <property name="profileManager" ref="profileManager" />
+    </bean>
+    
+    <bean id="businessAccountSrv" class="com.incyyte.app.service.BusinessAccountServiceImpl" >
+           <property name="businessAccountManager" ref="businessAccountManager" />
+    </bean>
+    
+       <bean id="answersrv" class="com.incyyte.app.service.AnswerServiceImpl">	
+          <property name="answerManager" ref="answerManager" />
+    </bean> 
+
+    <bean id="answerManager" class="com.incyyte.app.manager.AnswerManagerImpl">	
+          <property name="answerDao" ref="answerDao" />
+    </bean>
+    
+    
+    <bean id="messagesManager" class="com.incyyte.app.manager.MessagesManagerImpl">	
+          <property name="messagesDao" ref="messagesDao" />
+        <property name="emailMgr" ref="emailMgr" />
+    </bean>
+    
+    <bean id="profileManager" class="com.incyyte.app.manager.ProfileServiceManager">	
+          <property name="profileDao" ref="profileDao" />
+       
+    </bean>
+    
+    <bean id="businessAccountManager" class="com.incyyte.app.manager.BusinessAccountServiceManager">	
+          <property name="businessAccountDao" ref="businessAccountDao" />
+       
+    </bean>
+    
+    <bean id="registrationMgr" class="com.incyyte.app.manager.RegistrationServiceManager">
+          <property name="registerDao" ref="registerDao" />
+          <property name="forgotPwdDao" ref="forgotPwdDao" />
+          <property name="emailMgr" ref="emailMgr" />
+    </bean>
+    <bean id="loginSrv" class="com.incyyte.app.service.LoginServiceImpl"/>
+
+    <bean id="forgotPwdSrv" class="com.incyyte.app.service.ForgotPasswordServiceImpl">
+          <property name="registrationMgr" ref="registrationMgr" />
+    </bean>   
+    
+    <bean id="homeSrv" class="com.incyyte.app.service.HomeServiceImpl" autowire="byName">	
+          <property name="homeMgr" ref="homeMgr" />
+          <property name="adminMgr" ref="adminMgr" />
+    </bean>    
+    <bean id="homeMgr" class="com.incyyte.app.manager.HomeServiceManager">
+          <property name="userDaoImpl" ref="userDaoImpl" />
+          <property name="registerDao" ref="registerDao" />
+    </bean>
+    
+    <bean id="adminSrv" class="com.incyyte.app.service.AdminServiceImpl" autowire="byName">	
+          <property name="adminMgr" ref="adminMgr" />
+          <property name="registrationMgr" ref="registrationMgr" />
+    </bean>    
+    <bean id="adminMgr" class="com.incyyte.app.manager.AdminServiceManager">
+          <property name="userDaoImpl" ref="userDaoImpl" />
+          <property name="adminDaoImpl" ref="adminDaoImpl" />
+    </bean>
+    
+     <bean id="groupService" class="com.incyyte.app.service.GroupServiceImpl"/>
+
+    <bean id="commentService" class="com.incyyte.app.service.CommentServiceImpl"/>
+	<bean id="userPollSrv" class="com.incyyte.app.service.UserPollServiceImpl" />
+	<bean id="userPollMgr" class="com.incyyte.app.manager.UserPollManagerImpl" />
+	<bean id="userPollDao" class="com.incyyte.app.dao.userPollPage.UserPollDaoImpl" />
+	
+	<bean id="pollEmailCountSrv" class="com.incyyte.app.service.PollEmailCountServiceImpl" />
+	<bean id="pollEmailCountMgr" class="com.incyyte.app.manager.PollEmailCountManagerImpl" />
+	<bean id="pollEmailCountDao" class="com.incyyte.app.dao.pollemailcount.PollEmailCountDaoImpl" />
+
+	<bean id="paymentSrv" class="com.incyyte.app.service.PaymentServiceImpl" />
+	<bean id="paymentMgr" class="com.incyyte.app.manager.PaymentMangerImpl" />
+	<bean id="paymentDao" class="com.incyyte.app.dao.payment.PaymentDaoImpl" />
+
+    <bean id="reportPollDao" class="com.incyyte.app.dao.question.ReportPollDaoImpl" />
+
+    <bean id="responseManager" class="com.incyyte.app.manager.ResponseManagerImpl" />
+    <bean id="responseDao" class="com.incyyte.app.dao.ResponseDaoImpl" />
+
+    <bean id="incyyteService" class="com.incyyte.app.service.InCyyteServiceImpl" />
+    <bean id="incyyteManager" class="com.incyyte.app.manager.InCyyteManagerImpl" />
+    <!-- DAO's -->
+
+	<bean id="adminDaoImpl" class="com.incyyte.app.dao.admin.AdminDaoImpl">  	
+     	<property name="abstractDao" ref="abstractDao"/>
+	</bean>	
+	
+	<bean id="answerDao" class="com.incyyte.app.dao.answers.AnswerDaoImpl">
+     	<property name="abstractDao" ref="abstractDao"/>
+	</bean> 
+	
+   	<bean id="addressDaoImpl" class="com.incyyte.app.dao.address.AddressLocatorDaoJTImpl">
+     	<property name="jdbcTemplate" ref="jdbcTemplate"/>
+	</bean>
+	<bean id="messagesDao" class="com.incyyte.app.dao.messages.MessagesDaoJdbc">
+     	<property name="abstractDao" ref="abstractDao"/>
+	</bean>
+	
+	<bean id="profileDao" class="com.incyyte.app.dao.profile.ProfileDaoImpl">
+     	<property name="abstractDao" ref="abstractDao"/>
+	</bean>
+	
+   	<bean id="userDaoImpl" 	class="com.incyyte.app.dao.user.UserDaoJTImpl">  	
+     	<property name="abstractDao" ref="abstractDao"/>
+	</bean>	
+   	<bean id="registerDao" 	class="com.incyyte.app.dao.login.RegisterDaoJTImpl">  	
+     	<property name="abstractDao" ref="abstractDao"/>
+	</bean>	
+	
+	<bean id="forgotPwdDao" 	class="com.incyyte.app.dao.forgotpwd.ForgotPwdDaoJTImpl">  	
+     	<property name="abstractDao" ref="abstractDao"/>
+	</bean>	
+	
+	<bean id="contactDao" 	class="com.incyyte.app.dao.contacts.ContactDaoImpl"/>  	
+	
+	<bean id="groupDao" 	class="com.incyyte.app.dao.groups.GroupDaoImpl">  	
+     	<property name="abstractDao" ref="abstractDao"/>
+     	<property name="lobHandler" ref="defaultLobHandler"/>
+	</bean>	
+	<bean id="commentDao" 	class="com.incyyte.app.dao.comments.CommentDaoImpl"/>
+   	<bean id="pollDao" 	class="com.incyyte.app.dao.question.PollDaoImpl">
+     	<property name="abstractDao" ref="abstractDao"/>
+	</bean>	
+	
+	<bean id="businessAccountDao" 	class="com.incyyte.app.dao.businessaccount.BusinessAccountDaoImpl">  	
+     	<property name="abstractDao" ref="abstractDao"/>
+	</bean>	
+	
+    <bean id="contactMgr" class="com.incyyte.app.manager.ContactServiceManager"/>
+
+    <bean id="quesMgr" class="com.incyyte.app.manager.QuestionServiceManager"/>
+
+    <bean id="QuestionDao" class="com.incyyte.app.dao.question.QuestionDaoImpl"/>
+
+    <bean id="abstractDao" 	class="com.incyyte.app.dao.core.AbstractDao">
+     	<property name="jdbcTemplate" ref="jdbcTemplate"/>
+     	<property name="txnHelper" ref="txnHelper"/>
+     	<property name="dsManager" ref="dsManager"/>     	     	
+	</bean>	
+  
+ 	<bean id="defaultLobHandler" class="org.springframework.jdbc.support.lob.DefaultLobHandler" lazy-init="true"/> 
+ 	<!--DATABASE CONNECTIVITY-->
+
+    <bean id="dataSource" 
+    		class="com.mchange.v2.c3p0.ComboPooledDataSource"
+    		destroy-method="close">    
+		 	<!-- ============== Basic jdbc Configuration Start ======== -->		 		
+		 		<property name="driverClass" value="${jdbc.driverClassName}"/>		 
+         		<property name="jdbcUrl" value="${jdbc.url}"/>         
+         		<property name="user" value="${jdbc.username}"/>         
+         		<property name="password" value="${jdbc.password}"/>
+		 	<!-- ============== Basic jdbc Configuration End ======== -->		 		
+            
+            <!-- ============== Basic Pool Configuration Start ======== -->                   	
+          	<property name="initialPoolSize" value="${primary.local.initialPoolSize}"/>          
+           	<property name="maxPoolSize" value="${primary.local.maxPoolSize}"/>           
+            <property name="maxIdleTime" value="${primary.local.maxIdleTime}"/>            
+            <property name="minPoolSize" value="${primary.local.minPoolSize}"/>             
+            <property name="maxConnectionAge" value="${primary.local.maxConnectionAge}"/> 
+            <property name="maxIdleTimeExcessConnections" value="${primary.local.maxIdleTimeExcessConnections}"/>
+  	     	<property name="idleConnectionTestPeriod" value="${primary.local.idleConnectionTestPeriod}"/>
+   
+		   	<!--Used when a connection leak takes place - switched off
+		  	<property name="debugUnreturnedConnectionStackTraces"
+					  		value="${primary.local.debugUnreturnedConnectionStackTraces}"/> 
+		  	<property name="unreturnedConnectionTimeout"
+						  	value="${primary.local.unreturnedConnectionTimeout}"/> 	
+			-->
+            <!-- ============== Basic Pool Configuration End ======== -->                   	
+         		             
+            <!-- ========  Transaction Management Start ========== -->          
+		  <!--  C3P0's default policy is to rollback any uncommitted, pending work.
+      			Setting autoCommitOnClose to true causes uncommitted pending work to 
+      			be committed, rather than rolled back on Connection close. -->           
+           		<property name="autoCommitOnClose" 
+           				  value="${primary.local.autoCommitOnClose}"/>
+      
+		  <!--   This should only be set to true when you are sure you are using a 
+	  			 database that allows Connections' autoCommit flag to go to false.
+	  			 If we want to manage transaction management by own and neither 
+	  			 rollback nor commit the set it to true. -->
+            
+            	 <property name="forceIgnoreUnresolvedTransactions" 
+            	 		   value="${primary.local.forceIgnoreUnresolvedTransactions}"/>
+          
+          <!--  Transaction Management End-->      
+    </bean>
+    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+     	<property name="dataSource" ref="dataSource"/>
+	</bean>
+    <bean id="dsManager" class="com.incyyte.app.dao.core.datasource.DataSourceManager">
+     	<property name="dataSource" ref="dataSource"/>
+	</bean>
+    
+    <!-- 
+    <bean id="transactionManager" 	class="org.springframework.orm.hibernate3.HibernateTransactionManager">		  
+		<property name="sessionFactory">
+		    <ref bean="sessionFactory"/>
+		</property>
+	</bean>		
+	 -->
+	 
+	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+     	<property name="dataSource" ref="dataSource"/>
+  	</bean>
+  	
+  	 <bean id="txnHelper" class="com.incyyte.app.dao.core.txn.TxnHelper" scope="prototype">
+		<property name="txnManager">
+			<ref bean="transactionManager"/>
+		</property>
+	 </bean>	
+
+<!-- EMAIL -->  	
+  
+	<bean id="emailMgr" class="com.incyyte.app.manager.EmailManager">
+		<property name="mailSender" ref="mailSender" />
+		<property name="velocityEngine" ref="velocityEngine" />
+        <property name="userDaoImpl" ref="userDaoImpl" />
+	</bean>    
+	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+	<!-- 
+		<property name="host" value="mail.uk2.net" />
+		<property name="username" value="youropinion@incyyte.com" />
+		<property name="password" value="incyyte" />
+		<property name="port" value="25" />
+	-->
+		<property name="host" value="smtp.sendgrid.net" />
+		<property name="username" value="incyyte" />
+		<property name="password" value="canucit#" />
+		<property name="port" value="587" />
+		 <property name="javaMailProperties">
+         <props>
+	  		<prop key="mail.smtp.auth">true</prop>
+         </props>
+    	</property>
+	</bean> 
+	<bean id="velocityEngine"
+		class="org.springframework.ui.velocity.VelocityEngineFactoryBean">
+		<property name="velocityProperties">
+			<value> resource.loader=class
+				class.resource.loader.class=org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader 
+			</value>
+		</property>
+	</bean>
+	<bean id="refData" class="com.incyyte.app.service.util.RefData"/>
+</beans>

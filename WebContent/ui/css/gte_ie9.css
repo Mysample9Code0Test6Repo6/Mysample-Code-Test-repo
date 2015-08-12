@@ -1,0 +1,93 @@
+/* CSS Document */
+
+span.title_green, .button_green:hover span.title_green, span.title_green1, .button_green1:hover span.title_green1, span.title_red, .button_red:hover span.title_red, span.title_gray, .button_gray:hover span.title_gray, span.title_gray1, .button_gray1:hover span.title_gray1, span.title_green_big, .button_green_big:hover span.title_green_big
+{
+   filter: none;
+}
+#myTextarea3 { line-height:100%;}
+	
+#header_topnav_inner {	margin-top:0px; }
+.custom-checkbox input, 
+.custom-radio input {left: -3px; border: none;}
+
+#welcome_user { margin:9px auto 0 auto; margin-top:7px !important;}
+
+#add_an_answer
+{
+	margin:5px 0 0 250px;
+}
+
+.custom-checkbox label,
+.custom-radio label {
+    display: block;
+    position: relative;
+    z-index: 1;
+    font-size: 14px;
+    padding-right: 1em;
+    line-height: 16px;
+    padding: .5em 0 .5em 35px !important;
+    margin: 0 0 .3em;
+    cursor: pointer;
+
+}
+.custom-checkbox label, .custom-radio label {
+    background-position: -7px -013px  !important;
+
+}
+
+.custom-checkbox label.hover,
+.custom-checkbox label.focus,
+.custom-radio label.hover,
+.custom-radio label.focus {
+    background-position: -7px -114px      !important;
+}
+
+.custom-checkbox label.checked,
+.custom-radio label.checked {
+    background-position: -7px -218px   !important;
+}
+
+.custom-checkbox label.checkedHover,
+.custom-checkbox label.checkedFocus {
+    background-position: -7px -314px !important;
+}
+
+.custom-checkbox label.focus,
+.custom-radio label.focus {
+    outline: 1px dotted #ccc;
+}
+#create_loginForm .new_button, #singlePage_loginForm .new_button, #msgPopUp .new_button, #errorPopUp .new_button, #userAlreadyExistPopUp .new_button,  #thankYouPopUp .new_button, #thankYouIncyytePopUp .new_button, #errorAlreadyVotedPopUp .new_button, #create_signupform .new_button, #create_fgtpwdform .frgtpass, .cookie_button {
+    width: 74px; height: 31px;
+    -webkit-border-radius: 35px;
+    -moz-border-radius: 35px;
+    border-radius: 35px;
+    background: -webkit-linear-gradient(bottom, #779c10, #a2d127 51%, #bffe19);
+    background: -moz-linear-gradient(bottom, #779c10, #a2d127 51%, #bffe19);
+    background: -o-linear-gradient(bottom, #779c10, #a2d127 51%, #bffe19);
+    background: linear-gradient(to top, #779c10, #a2d127 51%, #bffe19);
+    background: -ms-linear-gradient(to top, #779c10, #a2d127 51%, #bffe19);
+    font:16px/18px 'bariol_boldbold', 'ie8_bariol_bold';
+    border: 2px solid #958e98;
+    color: #1b303f;
+    padding: 4px;
+    cursor: pointer;
+    background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAxIDEiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPgo8bGluZWFyR3JhZGllbnQgaWQ9Imc3NTEiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj4KPHN0b3Agc3RvcC1jb2xvcj0iIzdEQTMxOCIgb2Zmc2V0PSIwIi8+PHN0b3Agc3RvcC1jb2xvcj0iI0I4RUYyMCIgb2Zmc2V0PSIxIi8+CjwvbGluZWFyR3JhZGllbnQ+CjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InVybCgjZzc1MSkiIC8+Cjwvc3ZnPg==);
+}
+#signup_modal_big .new_button, #signup_modal_big_Form .new_button{
+
+    background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAxIDEiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPgo8bGluZWFyR3JhZGllbnQgaWQ9Imc3MzIiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj4KPHN0b3Agc3RvcC1jb2xvcj0iIzc4OUUwRCIgb2Zmc2V0PSIwIi8+PHN0b3Agc3RvcC1jb2xvcj0iIzk5QzYyMyIgb2Zmc2V0PSIwLjUiLz48c3RvcCBzdG9wLWNvbG9yPSIjQjFFNzIxIiBvZmZzZXQ9IjEiLz4KPC9saW5lYXJHcmFkaWVudD4KPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNnNzMyKSIgLz4KPC9zdmc+);
+    border-radius: 35px;
+    -webkit-border-radius:35px;
+    -moz-border-radius: 35px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.75);
+    cursor: pointer;
+    height: 39px;
+    margin-left: 7px;
+    margin-top: 3px;
+    width: 214px;
+    font:16px/18px 'bariol_boldbold', 'ie8_bariol_bold';
+    color: #1b303f;
+}
+#group_1 img{
+    margin-left: 10px;
+}
