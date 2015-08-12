@@ -1,0 +1,116 @@
+<?xml version="1.0"?>
+
+<project name="inCyyte" basedir="." default="usage">
+    <property file="build.properties"/>
+
+    <property name="src.dir" value="src"/>
+    <property name="web.dir" value="WebContent"/>
+    <property name="build.dir" value="${web.dir}/WEB-INF/classes"/>
+    <property name="name" value="inCyyte"/>
+
+    <path id="master-classpath">
+        <fileset dir="${web.dir}/WEB-INF/lib">
+            <include name="*.jar"/>
+        </fileset>
+        <!-- We need the servlet API classes:        -->
+        <!--   for Tomcat 4.1 use servlet.jar        -->
+        <!--   for Tomcat 5.0 use servlet-api.jar    -->
+        <!--   for Other app server - check the docs -->
+
+        <fileset dir="${appserver.home}/lib">
+            <include name="servlet*.jar"/>
+        </fileset>
+        <fileset dir="${appant.home}/lib">
+            <include name="*.jar"/>
+        </fileset>    	
+        <pathelement path="${build.dir}"/>
+    </path>
+
+    <target name="usage">
+        <echo message=""/>
+        <echo message="${name} build file"/>
+        <echo message="-----------------------------------"/>
+        <echo message=""/>
+        <echo message="Available targets are:"/>
+        <echo message=""/>
+        <echo message="build     --> Build the application"/>
+        <echo message="deploy    --> Deploy application as directory"/>
+        <echo message="deploywar --> Deploy application as a WAR file"/>
+        <echo message="install   --> Install application in Tomcat"/>
+        <echo message="reload    --> Reload application in Tomcat"/>
+        <echo message="start     --> Start Tomcat application"/>
+        <echo message="stop      --> Stop Tomcat application"/>
+        <echo message="list      --> List Tomcat applications"/>
+        <echo message=""/>
+    </target>
+
+    <target name="build" description="Compile main source tree java files">
+        <mkdir dir="${build.dir}"/>
+        <javac destdir="${build.dir}" target="1.6" debug="true" includeantruntime="false"
+               deprecation="false" optimize="false" failonerror="true">
+            <src path="${src.dir}"/>
+            <classpath refid="master-classpath"/>
+        </javac>
+    	<copy todir="${build.dir}" preservelastmodified="true">
+    		<fileset dir="${src.dir}">
+    	    	<include name="**/*.properties"/>
+                <include name="**/Geo*.dat"/>
+                <include name="**/*.xsl" />
+    			<include name="**/*.vm" />
+    	   	</fileset>
+    	</copy>
+    </target>
+
+    <target name="deploywar" depends="clean,build" description="Deploy application as a WAR file">
+        <war destfile="${name}.war"
+        	webxml="${web.dir}/WEB-INF/web.xml">
+            <fileset dir="${web.dir}">
+                <include name="**/*.*"/>
+            </fileset>
+        </war>
+    </target>
+
+    <target name="clean" description="Clean output directories">
+        <delete>
+            <fileset dir="${build.dir}">
+                <include name="**/*.class"/>
+            </fileset>
+        </delete>
+    </target>
+    <target name="undeploy" description="Un-Deploy application">
+        <delete>
+            <fileset dir="${deploy.path}/${name}">
+                <include name="**/*.*"/>
+            </fileset>
+        </delete>
+    </target> 
+	<target name="junit" depends="build" description="Run JUnit Tests">
+	        <junit printsummary="on"
+	               fork="false"
+	               haltonfailure="false"
+	               failureproperty="tests.failed"
+	               showoutput="true">
+	            <classpath refid="master-classpath"/>
+	            <formatter type="brief" usefile="false"/>
+	            <batchtest>
+	                <fileset dir="${build.dir}">
+	                    <include name="**/Test*.*"/>
+	                </fileset>
+	            </batchtest>
+	
+	        </junit>
+	
+	        <fail if="tests.failed">
+	        tests.failed=${tests.failed}
+	        ***********************************************************
+	        ***********************************************************
+	        ****  One or more tests failed!  Check the output ...  ****
+	        ***********************************************************
+	        ***********************************************************
+	        </fail>
+	    </target>
+
+
+<!-- End Tomcat tasks -->
+
+</project>
