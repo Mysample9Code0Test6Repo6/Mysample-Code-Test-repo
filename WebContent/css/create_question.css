@@ -1,0 +1,259 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+#strapline
+{
+	clear: left;
+	float: left;
+	width: 730px;
+	border-style:solid;
+	border-width:0px;
+	font-size: 16px;
+	font-style: italic;
+	color: #33527F;
+	margin-left: 130px;
+}
+
+.logo{
+border-style:solid;
+border-width:0px;
+float: left;
+position: absolute; left: 100px; top: 150px;
+}
+
+.logo_txt{
+border-style:solid;
+border-width:0px;
+float: right;
+vertical-align:middle;
+position: absolute; left: 450px; top: 180px;
+
+}
+.inputwidth{
+	width: 340px;
+	position:relative;
+	right: 50px;
+}
+.inputMidwidth{
+	width: 170px;
+	position:relative;
+	right: 50px;
+}
+/*
+##############################################################################
+MainPanel Layout
+*/
+
+.mainPanelTop
+{
+/*
+	font-size: 0px;	
+	height: 15px;
+	background-image: url(../images/main_lightPanel_top.png);*/
+}
+
+.mainPanelTop .cap
+{
+	/*height: 25px;
+	background-image: url(../images/main_lightPanel_topRight.png);
+	background-position: right;
+	background-repeat: no-repeat;*/
+}
+
+.mainPanelBody
+{
+/*	background-image: url(../images/main_lightPanel_body.png);
+	background-repeat: repeat-y;
+*/	
+}
+
+.mainPanelBody .cap
+{
+	/*background-image: url(../images/main_lightPanel_bodyRight.png);
+	background-position: right;
+	background-repeat: repeat-y;
+*/
+}
+
+.mainPanelBottom
+{
+	/*font-size: 0px;	
+	height: 50px;
+	background-image: url(../images/main_lightPanel_bottom.png);*/
+}
+
+.mainPanelBottom .cap
+{
+/*
+	height: 50px;
+	background-image: url(../images/main_lightPanel_bottomRight.png);
+	background-position: right;
+	background-repeat: no-repeat;*/
+}
+
+/*
+##############################################################################
+MainPanel Layout
+*/
+
+/*
+##############################################################################
+Panel Layout
+*/
+.panelFont{
+	color: #33527F;
+	font-size: 12pt;
+	display: inline-block;
+	font-style: normal;
+	font-weight: bold;
+	vertical-align: middle;
+}
+.inputTxt{
+	font-size: 10pt;
+	font-style: normal;
+	text-transform:uppercase;
+	
+	background-image:url(../images/form_bg.jpg);
+	background-repeat:repeat-x;
+	border:1px solid #d1c7ac;
+	width: 100px;
+	color:#33527F;
+	padding:3px;
+	margin-right:4px;
+	margin-bottom:8px;
+
+}
+
+.questionlightPanel
+{
+	margin: 15px 10px 10px 10px;
+	position: relative;
+	top: 0px;
+	left: 15px;
+	width: 540px;
+	margin-left: 10px;
+	margin-right: 10px;
+	background-color: #FFFFFF;
+}
+
+.lightPanel
+{
+	position: relative;
+	top: 230px;
+	left: 110px;
+	width: 700px;
+	margin-left: 10px;
+	margin-right: 10px;
+	background-color: #FFFFFF;
+}
+
+.lightPanelTop
+{
+	font-size: 0px;	/* ensures min height */
+	height: 12px;
+	background-image: url(../images/lightPanel_top.png);
+}
+
+.lightPanelTop .cap
+{
+	height: 12px;
+	background-image: url(../images/lightPanel_topRight.png);
+	background-position: right;
+	background-repeat: no-repeat;
+}
+
+.lightPanelBody
+{
+	background-image: url(../images/lightPanel_body.png);
+	background-repeat: repeat-y;
+}
+
+.lightPanelBody .cap
+{
+	background-image: url(../images/lightPanel_bodyRight.png);
+	background-position: right;
+	background-repeat: repeat-y;
+}
+
+.lightPanelBottom
+{
+	font-size: 0px;	/* ensures min height */
+	height: 16px;
+	background-image: url(../images/lightPanel_bottom.png);
+}
+
+.lightPanelBottom .cap
+{
+	height: 16px;
+	background-image: url(../images/lightPanel_bottomRight.png);
+	background-position: right;
+	background-repeat: no-repeat;
+}
+
+/*
+##############################################################################
+Panel Content Layout
+*/
+
+.contentWrap
+{
+	margin-left: 10px;
+	margin-right: 0px;
+	line-height: 22px;
+	border-width:0px;
+	border-style:solid;
+	
+}
+
+input.LogIn{
+	font: bold 12px Arial, Sans-serif;
+	height: 25px;
+	padding: 2px 12px;
+	color: #FFF;
+	background: #2C76A6;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #86BBDF #245F86 #245F86 #86BBDF;
+	cursor: pointer;
+}
+
+input.closeDate{
+	border:none;
+	background-color:#FAFAFA;
+	width:120px;
+	text-align:right;
+	color: #004080;
+	font-size:10px;
+	font-style:normal;	
+}
+
+input.closeDateE{
+	border:none;
+	background-color:#FAFAFA;
+	width:120px;
+	text-align:left;
+	color: #004080;
+	font-size:10px;
+	font-style:normal;	
+}
+
+.footerCell {
+	display:table-cell;
+	width: 150px;
+	border: 0px solid blue;
+	padding: 1em;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:10px;
+	color: #33527F;
+	font-weight: bold;
+}
+
+.rbCell {
+	display: table-cell;
+	width: 100px;
+	border: 0px solid blue;
+	padding: 0em;
+	vertical-align: top;
+	text-align: right;
+}

@@ -1,0 +1,460 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*
+##############################################################################
+Named Elements
+*/
+
+body {
+	margin:0;
+	padding:0;
+	height:100%;
+	font-family: Arial;
+	font-size: 10pt;
+	top: 40px;
+   /*background-image: url(../images/raise_question_header-bg.jpg);*/
+
+}
+
+img
+{
+	border: 0px;
+}
+
+a
+{
+	color: #335480;
+	text-decoration: none;
+}
+
+/*
+##############################################################################
+Common Components
+*/
+
+.error
+{
+	color: fireBrick;
+	margin-left: 25px;
+}
+
+.errorIcon
+{
+	margin-left: 6px;
+	visibility: hidden;
+}
+
+.dialogLabel{
+	display:block;
+}
+.dialogText{
+	display:block;
+	margin-bottom:12px; width:95%; padding: .4em; 
+	
+		margin: 5px 0;
+	padding: 7px 6px;
+	color: #6A6969;
+	border-width: 1px;
+	border-style: solid;
+  	border-color: #D4D4D4 #EBEBEB #EBEBEB #D4D4D4; 	
+	font: 11px 'Lucida Grande', Verdana, Helvetica, sans-serif;
+	overflow:hidden; 
+	
+}
+.dialogPCText{
+	display:block;
+	margin-bottom:12px; width:30%; padding: .4em; 
+	text-transform:uppercase;
+
+	margin: 5px 0;
+	padding: 7px 6px;
+	color: #6A6969;
+	border-width: 1px;
+	border-style: solid;
+  	border-color: #D4D4D4 #EBEBEB #EBEBEB #D4D4D4; 	
+	font: 11px 'Lucida Grande', Verdana, Helvetica, sans-serif;
+	overflow:hidden; 
+	
+}
+
+.dialogDD{
+	display:block;
+	margin-bottom:12px; width:60%; padding: .4em; 
+}
+
+.panelLink {
+	color: #004080;
+	font-size:10px;
+	font-style:normal;	
+	cursor: pointer;
+}
+
+.inputError
+{
+	background-color: #ffdce2;
+	border: solid 2px #cc3605;
+}
+
+#container
+{
+	width: 980px;
+	margin: 10px auto;
+	background-color: #fff;
+	color: #333;
+	border: 0px solid gray;
+	line-height: 130%;
+	min-height:100%;
+	position:relative;
+
+
+}
+
+#top
+{
+	padding: .5em;
+	background-color: #fff;
+
+}
+
+#top h1
+{
+	padding: 0;
+	margin: 0;
+}
+
+#content
+{
+	clear: left;
+	float: left;
+	display: inline;
+	margin-left: 10px;
+	padding-bottom:500px;   /* Height to the footer */
+	width: 730px;
+	border-width:1px;
+	border-right-style: solid;
+	border-color: #EBEBEB;
+}
+
+#borderLine
+{
+	position: relative;
+	top: 200px;
+	width: 730px;
+	border-width:1px;
+	border-color: #EBEBEB;
+	border-top-style: solid;
+}
+
+#adside
+{
+	position: relative;
+	float: right;
+	width: 200px;
+	padding: 10px 10px;
+	margin: 0 10px 0 0;
+	display: inline;
+	top: 44px;
+	border-style:solid;
+	border-width:0px;
+}
+
+
+
+#footer
+{
+	clear: both;
+	margin: 0;
+	padding: 0.5em;
+	color: #333;
+	background-color: #fff;
+	bottom:0;
+	height:60px;   /* Height of the footer */
+
+	border-width:1px;
+	border-top-style: solid;
+	border-color: #EBEBEB;
+
+}
+
+.logo{
+	border-style:solid;
+	border-width:0px;
+	float: left;
+	position: absolute;
+	left: 13px;
+	top: 44px;
+}
+
+.thinking_ppl{
+	border-style:solid;
+	border-width:0px;
+	float: left;
+	position: absolute;
+	left: 32px;
+	top: 550px;
+}
+
+#headerText{
+	position: relative;
+	top: 250px;
+	left: 140px;
+	width: 430px;
+	line-height:20px;
+	font-family: Arial, Verdana, Helvetica, sans-serif;
+	font-size: 16px;
+	color: #333366;
+	text-align: center;
+}
+
+#suggestionText{
+	position: relative;
+	top: 630px;
+	left: 140px;
+	width: 500px;
+	line-height:20px;
+	font-family: Arial, Verdana, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #333366;
+	text-align: center;
+}
+
+.logo_txt{
+	border-style:solid;
+	border-width:0px;
+	float: right;
+	vertical-align:middle;
+	position: absolute;
+	left: 337px;
+	top: 94px;
+
+}
+
+.spacer
+{
+	height:30;
+	display: inline-block;
+	border-style:solid;
+	border-width:0px;
+}
+/*
+##############################################################################
+Panel Layout
+*/
+.panelFont{
+	color: #33527F;
+	font-size: 12pt;
+	display: inline-block;
+	font-style: normal;
+	font-weight: bold;
+	vertical-align: middle;
+	}
+	.textfield { 
+	font-size: 50px; 
+}
+.inputTxt{
+	font-size: 10pt;
+	font-style: normal;
+	/*text-transform:uppercase;*/
+	
+	background-image:url(../images/form_bg.jpg);
+	background-repeat:repeat-x;
+	border:1px solid #d1c7ac;	
+	/*width: 100px;*/
+	color:#33527F;
+	padding:5px;
+	margin-right:4px;
+	margin-bottom:8px;
+
+}
+
+#password-clear {  
+	display: none;  
+} 
+
+
+.inputDD{
+	font-size: 10pt;
+	font-style: normal;
+	
+	background-image:url(../images/form_bg.jpg);
+	background-repeat:repeat-x;
+	border:1px solid #d1c7ac;
+	width: 350px;
+	color:#33527F;
+	padding:3px;
+	margin-right:4px;
+	margin-bottom:8px;
+
+}
+
+.findImg{
+	width:60px;
+	height:22px;
+	border-width:0px;
+	border-style:solid;
+	vertical-align: middle;
+}
+
+.signupPanel
+{
+	position: relative;
+	top: 50px;
+	left: 0px;
+	width: 250px;
+	margin-left: 0px;
+	margin-right: 0px;
+	background-color: #FFFFFF;
+}
+
+.adbottomTxt{
+	position: relative;
+	top: 90px;
+	left: 20px;
+	width: 250px;
+	margin-left: 0px;
+	margin-right: 0px;
+	background-color: #FFFFFF;
+}
+.lightPanel
+{
+	position: relative;
+	top: 310px;
+	left: 0px;
+	width: 700px;
+	margin-left: 10px;
+	margin-right: 10px;
+	background-color: #FFFFFF;
+}
+
+.lightPanelTop
+{
+	font-size: 0px;	/* ensures min height */
+	height: 12px;
+	background-image: url(../images/lightPanel_top.png);
+}
+
+.lightPanelTop .cap
+{
+	height: 12px;
+	background-image: url(../images/lightPanel_topRight.png);
+	background-position: right;
+	background-repeat: no-repeat;
+}
+
+.lightPanelBody
+{
+	background-image: url(../images/lightPanel_body.png);
+	background-repeat: repeat-y;
+}
+
+.lightPanelBody .cap
+{
+	background-image: url(../images/lightPanel_bodyRight.png);
+	background-position: right;
+	background-repeat: repeat-y;
+}
+
+.lightPanelBottom
+{
+	font-size: 0px;	/* ensures min height */
+	height: 12px;
+	background-image: url(../images/lightPanel_bottom.png);
+}
+
+.lightPanelBottom .cap
+{
+	height: 12px;
+	background-image: url(../images/wel_lightPanel_bottomRight.png);
+	background-position: right;
+	background-repeat: no-repeat;
+}
+
+/*
+##############################################################################
+Panel Content Layout
+*/
+
+.contentWrap
+{
+	margin-left: 25px;
+	margin-right: 25px;
+	
+	line-height: 22px;
+border-width:0px;
+border-style:solid;
+	
+}
+
+.description
+{
+	font-weight: bold;
+}
+
+.leftLinkColumn
+{
+	float: left;
+	width: 300px;
+}
+
+.rightLinkColumn
+{
+	float: left;
+}
+
+.primaryButton
+{
+	width: 94px;
+	height: 30px;
+	
+	color: White;
+	font-weight: bold;
+	font-size: 10pt;
+	
+	text-align: center;
+	line-height: 29px;	/* Verticaly centers text offset by 1px */
+	
+	display: inline-block;
+	cursor: pointer;
+	
+	background-image: url(../images/primaryButton.png);
+}
+
+.dialogLabel{
+	display:block;
+}
+.dialogText{
+	display:block;
+	margin-bottom:12px; width:95%; padding: .4em; 
+}
+.dialogDD{
+	display:block;
+	margin-bottom:12px; width:60%; padding: .4em; 
+}
+
+input.LogIn{
+	font: bold 10px Arial, Sans-serif;
+	height: 20px;
+	padding: 2px 12px;
+	color: #FFF;
+	background: #2C76A6;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #86BBDF #245F86 #245F86 #86BBDF;
+	cursor: pointer;
+	margin-right:4px;
+}
+
+input.SignUp{
+	font: bold 10px Arial, Sans-serif;
+	height: 20px;
+	padding: 2px 12px;
+	color: #FFF;
+	background: #2C76A6;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #86BBDF #245F86 #245F86 #86BBDF;
+	cursor: pointer;
+	margin-right:45px;
+
+}

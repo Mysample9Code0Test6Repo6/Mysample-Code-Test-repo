@@ -1,0 +1,41 @@
+@charset "utf-8";
+/* CSS Document */
+
+.loginText {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:11px;
+	color: #33527F;
+	font-weight: bold;
+}
+.labelCell2 {
+	display: table-cell;
+	width: 150px;
+	border: 0px solid blue;
+	padding: 1em;
+	vertical-align: top;
+	text-align: right;
+}
+
+.contentCell2 {
+	display: table-cell;
+	width: 350px;
+	border: 0px solid blue;
+	padding: 0.5px 0px 0px 35px;
+	text-align:left;
+}
+
+.errorBgColor{
+background-color:#CC0000;
+}
+
+input.login {
+	font: bold 12px Arial, Sans-serif;
+	height: 25px;
+	padding: 2px 27px;
+	color: #FFF;
+	background: #2C76A6;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #86BBDF #245F86 #245F86 #86BBDF;
+	cursor: pointer;
+}

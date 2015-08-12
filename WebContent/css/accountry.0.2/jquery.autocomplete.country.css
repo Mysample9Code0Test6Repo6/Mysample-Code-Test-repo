@@ -1,0 +1,15 @@
+#ac_country {
+	background: 10px 9px no-repeat;
+	/*padding:3px 3px 3px 27px;*/
+}
+#ac_country_hidden {
+    visibility: hidden;
+}
+
+#ac_country1 {
+	background: 10px 9px no-repeat;
+	padding:3px 3px 3px 27px;
+}
+#ac_country1_hidden {
+    visibility: hidden;
+}

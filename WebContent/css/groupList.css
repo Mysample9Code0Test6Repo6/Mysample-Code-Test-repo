@@ -1,0 +1,74 @@
+/*
+##############################################################################
+groupList.html specific css.
+*/
+
+#groupList
+{
+	font-size: 9pt;
+	width: 100%;
+}
+
+#groupList thead
+{
+	background-image: url(images/gridBackground_header.png);
+}
+
+#groupList thead tr
+{
+	height: 20px;
+	color: white;
+}
+
+#groupList tr
+{
+	height: 20px;
+}
+
+#groupList td
+{
+	padding-top: 2px;
+}
+
+
+#groupList .left
+{
+	width: 10px;
+}
+
+#groupList .right
+{
+	width: 10px;
+}
+
+
+#groupList thead td
+{
+	background: none;
+	background-color: #e2e7ea; 
+	color: #4d5e68;
+	font-weight: bold;
+	font-size: 12px;
+	padding: 11px 0px;
+}
+
+/*
+#groupList tbody tr
+{
+	background: none !important;
+	background-image: none !important;
+}
+*/
+
+#groupList tbody tr td
+{
+	padding: 0px 0px;
+	font-size: 12px;
+	color: #4d5e68;
+	border-bottom: 1px solid #d7d8da;
+}
+
+#groupList tbody .hover td
+{
+	background-color: #fdfdfd;
+}

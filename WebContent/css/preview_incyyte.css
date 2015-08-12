@@ -1,0 +1,272 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+#strapline
+{
+	clear: left;
+	float: left;
+	width: 730px;
+	border-style:solid;
+	border-width:0px;
+	font-size: 14px;
+	font-style: italic;
+	color: #33527F;
+	margin-left: 10px;
+}
+
+.logo{
+border-style:solid;
+border-width:0px;
+float: left;
+position: absolute; left: 100px; top: 150px;
+}
+
+.logo_txt{
+border-style:solid;
+border-width:0px;
+float: right;
+vertical-align:middle;
+position: absolute; left: 450px; top: 180px;
+
+}
+.inputwidth{
+	width: 330px;
+}
+
+/*
+##############################################################################
+MainPanel Layout
+*/
+
+.mainPanel
+{
+	position: relative;
+	width: 730px;
+	background-color: #FFFFFF;
+
+	border-width:0px;
+    border-style:solid;
+
+}
+
+.mainPanelTop
+{
+	font-size: 0px;	/* ensures min height */
+	height: 12px;
+	background-image: url(../images/lightPanel_top.png);
+}
+
+.mainPanelTop .cap
+{
+	height: 12px;
+	background-image: url(../images/lightPanel_topRight.png);
+	background-position: right;
+	background-repeat: no-repeat;
+}
+
+.mainPanelBody
+{
+	background-image: url(../images/lightPanel_body.png);
+	background-repeat: repeat-y;
+}
+
+.mainPanelBody .cap
+{
+	background-image: url(../images/lightPanel_bodyRight.png);
+	background-position: right;
+	background-repeat: repeat-y;
+}
+
+.mainPanelBottom
+{
+	font-size: 0px;	/* ensures min height */
+	height: 12px;
+	background-image: url(../images/lightPanel_bottom.png);
+}
+
+.mainPanelBottom .cap
+{
+	height: 12px;
+	background-image: url(../images/lightPanel_bottomRight.png);
+	background-position: right;
+	background-repeat: no-repeat;
+}
+
+.lightPanelBottom
+{
+	font-size: 0px;	/* ensures min height */
+	height: 16px;
+	background-image: url(../images/lightPanel_bottom.png);
+	
+}
+
+.lightPanelBottom .cap
+{
+	height: 16px;
+	background-image: url(../images/lightPanel_bottomRight.png);
+	background-position: right;
+	background-repeat: no-repeat;
+	
+}
+
+.questionlightPanel
+{
+	margin: 15px 10px 10px 10px;
+	position: relative;
+	top: -110px;
+	left: 15px;
+	width: 610px;
+	margin-left: 35px;
+	margin-right: 10px;
+	background-color: #FFFFFF;
+	
+}
+
+.mainPanel
+{
+	position: relative;
+	width: 600px;
+	background-color: #FFFFFF;
+	left: 55px;
+	border: 1px solid #E2E4E7;
+	padding-bottom: 50px;
+	top: -100px;
+	height: 50px;
+
+}
+.lightPanelTop
+{
+	font-size: 0px;	/* ensures min height */
+	height: 5px;
+	background-image: url(../images/lightPanel_top.png);
+}
+
+.lightPanelTop .cap
+{
+	height: 12px;
+	background-image: url(../images/lightPanel_topRight.png);
+	background-position: right;
+	background-repeat: no-repeat;
+}
+
+.lightPanelBody
+{
+	background-image: url(../images/lightPanel_body.png);
+	background-repeat: repeat-y;
+	height: 55px;
+}
+
+.lightPanelBody .cap
+{
+	background-image: url(../images/lightPanel_bodyRight.png);
+	background-position: right;
+	background-repeat: repeat-y;
+}
+
+
+
+.footerCell {
+	display:table-cell;
+	width: 500px;
+	border: 0px solid blue;
+	padding: 1em;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color: #33527F;
+	font-weight: normal;
+
+	}
+	
+
+	
+/*
+##############################################################################
+MainPanel Layout
+*/
+
+
+.contentWrap
+{
+	margin-left: 25px;
+	margin-right: 25px;
+	
+	line-height: 22px;
+border-width:0px;
+border-style:solid;
+	
+}
+
+.preview{
+	width: 670px;
+	height: 600px;
+	background-image: url(../images/default_preview.png);
+	background-repeat:no-repeat;
+	position: relative;
+	left:30px;
+	border-width:1px;
+	border-right-style: solid;
+	border-color: #EBEBEB;
+}
+.previewTable {
+    display: table;
+	position: relative;
+	top:70px;
+  	width: 600px;
+	left:30px;
+	
+}
+
+.previewFooter {
+    display: table;
+	position: relative;
+  	width: 600px;
+	left:60px;
+}
+
+.previewFooterCell {
+	display:table-cell;
+	width: 150px;
+	border: 0px solid blue;
+	padding: 1em;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:10px;
+	color: #33527F;
+	font-weight: bold;
+}
+.questionCell {
+	display:table-cell;
+	width: 500px;
+	border: 0px solid blue;
+	padding: 1em;
+	text-align:left;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:17px;
+	color: #33527F;
+	font-weight: bold;
+}
+
+.answButtonCell {
+	display: table-cell;
+	width: 80px;
+	border: 0px solid blue;
+	padding: 0.5em;
+	text-align:right;	
+}
+.answerCell {
+	display: table-cell;
+	width: 420px;
+	border: 0px solid blue;
+	padding: 0.5em;
+	text-align:left;
+	padding-left: 30px;
+	vertical-align:middle;
+	font-size:14px;
+}
+
+.spacerCell {
+	display: table-cell;
+	width: 50px;
+	height: 10px;
+	border: 0px solid blue;
+}
