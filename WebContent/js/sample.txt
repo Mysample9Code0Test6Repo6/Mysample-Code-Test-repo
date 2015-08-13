@@ -1,5 +1,0 @@
-Tour and Hints
-	http://www.zurb.com/playground/jquery-joyride-feature-tour-plugin
-	
-Ads
-http://www.inc.com/guides/2010/08/how-to-manage-your-online-advertising.html	
